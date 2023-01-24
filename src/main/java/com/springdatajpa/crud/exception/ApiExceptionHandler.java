@@ -13,6 +13,10 @@ import java.util.List;
 public class ApiExceptionHandler {
 
     @ExceptionHandler(Exception.class)
+
+    /**
+     * 500 status code
+     * */
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ApiErrorResponse handleUserNotFoundException(Exception exception) {
         List<Message> messages = Arrays.asList(new Message(exception.getMessage()));
